@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -29,17 +30,22 @@
         </div>
       </div>
 
-      <table class="table table-bordered">
-        <thead>
-          <tr>
-            <td>Titulo</td>
-            <td>Descrição</td>
-            <td with="200">Açõe</td>
-          </tr>
-        </thead>
-        <tbody>
-        </tbody>
-      </table>
+      <div class="panel panel-primary">
+        <div class="panel-heading">Items</div>
+        <div class="panel-body">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <td>Titulo</td>
+                <td>Descrição</td>
+                <td with="200">Açõe</td>
+              </tr>
+            </thead>
+            <tbody>
+          </tbody>
+        </table>
+        </div>
+      </div>
 
       <ul id="pagination" class="pagination-sm"></ul>
 
@@ -55,7 +61,7 @@
                 <form data-toggle="validator" action="api/create.php" method="POST">
                   <div class="form-group">
                     <label class="control-label" for="title">Título</label>
-                    <input type="text" name="title" value="" class="form-control" placeholder="Titulo do item" data-error="Por favor entre com o título" required />
+                    <input type="text" name="title" class="form-control" placeholder="Titulo do item" data-error="Por favor entre com o título" required />
                     <div class="help-block with-errors"></div>
                   </div>
                   <div class="form-group">
@@ -77,16 +83,14 @@
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" arial-label="Close">
-                <span arial-hidden="true">x</span>
-                <h4 class="modal-titlemyModalLabel">Edit Item</h4>
-              </button>
-            </div>
+              <button class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">x</span></button>
+              <h4 class="modal-title" id="myModalLabel">Editar item</h4>
+              </div>
             <div class="modal-body">
               <form data-toggle="validator" action="api/update.php" method="PUT">
                 <input type="hidden" name="id" class="edit-id">
                 <div class="form-group">
-                  <label for="title" class="control-label">Títle</label>
+                  <label for="title" class="control-label">Título</label>
                   <input type="text" name="title" class="form-control" data-error="Entre com o título" placeholder="Entre com o título" required />
                   <div class="help-block with-errors"></div>
                 </div>
@@ -108,7 +112,7 @@
 
 
     <script>
-      var url =  'localhost/envent';
+      var url = "http://localhost:8000/";
     </script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.min.js"></script>

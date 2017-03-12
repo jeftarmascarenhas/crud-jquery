@@ -1,7 +1,11 @@
 <?php
-  define(DB_USER, 'root');
-  define(DB_PASSWORD, '123456');
-  define(DB_DATABASE, 'h_blog');
-  define(DB_HOST, 'localhost');
-  $mysqli= new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_DATABASE);
+  $host     = "localhost";
+  $port     = 3306;
+  $socket   = "";
+  $user     = "root";
+  $password = "123456";
+  $dbname   = "h_blog";
+
+  $mysqli = new mysqli($host, $user, $password, $dbname, $port, $socket)
+      or die ('Could not connect to the database server' . mysqli_connect_error());
 ?>
